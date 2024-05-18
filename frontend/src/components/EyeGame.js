@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 export function EyeGame() {
     const [generatedNumbers, setGeneratedNumbers] = useState([]);
-    const [guessedNumbers, setGuessedNumbers] = useState(Array(5).fill(''));
+    const [guessNumberNum, setGuessNumberNum] = useState(3);
+    const [guessedNumbers, setGuessedNumbers] = useState(Array(guessNumberNum).fill(''));
     const [showNumbers, setShowNumbers] = useState(false);
     const [result, setResult] = useState('');
 
@@ -33,14 +34,14 @@ export function EyeGame() {
 
     const generateNumbers = () => {
         const numbers = [];
-        while (numbers.length < 5) {
+        while (numbers.length < guessNumberNum) {
             const randomNumber = Math.floor(Math.random() * 100);
             if (!numbers.includes(randomNumber)) {
                 numbers.push(randomNumber);
             }
         }
         setGeneratedNumbers(numbers);
-        setGuessedNumbers(Array(5).fill(''));
+        setGuessedNumbers(Array(guessNumberNum).fill(''));
         setShowNumbers(true);
         setResult('');
     };
