@@ -1,4 +1,5 @@
 ## GameBunnies
+Platform for fun games
 
 ### How to set up venv
 ```
